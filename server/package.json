@@ -1,19 +1,16 @@
+
 {
-    "name": "privacy-analytics-server",
-    "version": "1.0.0",
-    "main": "src/index.js",
-    "scripts": {
-      "start": "node src/index.js",
-      "dev": "nodemon src/index.js"
-    },
-    "dependencies": {
-      "@supabase/supabase-js": "^2.x.x",
-      "cors": "^2.8.5",
-      "dotenv": "^16.x.x",
-      "express": "^4.x.x",
-      "helmet": "^7.x.x"
-    },
-    "devDependencies": {
-      "nodemon": "^3.x.x"
-    }
+  "name": "privacy-analytics",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "concurrently \"npm run start:client\" \"npm run start:server\"",
+    "start:client": "cd client && npm start",
+    "start:server": "cd server && npm start",
+    "build": "npm run build:client && npm run build:tracking",
+    "build:client": "cd client && npm run build",
+    "build:tracking": "cd tracking-script && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1"
   }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "privacy-analytics",
+  "version": "1.0.0",
+  "description": "Privacy-focused analytics platform",
+  "scripts": {
+    "start": "concurrently \"cd client && npm run start\" \"cd server && npm run start\"",
+    "start:client": "cd client && npm run start",
+    "start:server": "cd server && npm run start",
+    "build": "npm run build:client && npm run build:tracking",
+    "build:client": "cd client && npm run build",
+    "build:tracking": "cd tracking-script && npm run build",
+    "install:all": "npm install && cd client && npm install && cd ../server && npm ins
